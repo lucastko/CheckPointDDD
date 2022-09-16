@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fiap.PrimaryController">
+  <tabs>
+    <Tab text="Cadastro">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="69.0" layoutY="101.0" text="NOME DO CLIENTE:">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldNome" layoutX="214.0" layoutY="97.0" prefHeight="25.0" prefWidth="328.0" />
+                  <TextField fx:id="textFieldModelo" layoutX="214.0" layoutY="131.0" prefHeight="25.0" prefWidth="328.0" />
+                  <TextField fx:id="textFieldMarca" layoutX="214.0" layoutY="167.0" prefHeight="25.0" prefWidth="328.0" />
+                  <TextField fx:id="textFieldValor" layoutX="214.0" layoutY="203.0" prefHeight="25.0" prefWidth="328.0" />
+                  <Label layoutX="43.0" layoutY="135.0" text="MODELO DO VEÍCULO:">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="135.0" layoutY="171.0" text="MARCA:">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="147.0" layoutY="207.0" text="VALOR:">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="284.0" layoutY="332.0" mnemonicParsing="false" onAction="#salvar" text="Cadastrar" textFill="#0040ff" />
+                  <Text fill="#0009ff" layoutX="180.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESTACIONAMENTO ATLAS" textAlignment="CENTER">
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="choiceBoxClienteAtivo" layoutX="226.0" layoutY="272.0" prefWidth="150.0" />
+                  <Text layoutX="107.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STATUS DO CLIENTE:" wrappingWidth="113.4453125">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </Text>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Consulta">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="454.0" prefWidth="695.0">
+               <children>
+                  <BorderPane layoutY="8.0" prefHeight="400.0" prefWidth="600.0">
+                     <top>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <Button mnemonicParsing="false" onAction="#FiltroClienteAt" text="Filtrar Clientes Ativos" />
+                              <Button mnemonicParsing="false" onAction="#FiltroValor" text="Filtrar por Valor" />
+                              <Button layoutX="142.0" layoutY="13.0" mnemonicParsing="false" onAction="#FiltroNome" text="Filtrar por Nome" />
+                              <Button layoutX="245.0" layoutY="13.0" mnemonicParsing="false" onAction="#FiltroModelo" text="Filtrar por Modelo" />
+                          </items>
+                        </ToolBar>
+                     </top>
+                  </BorderPane>
+                  <ListView fx:id="listView" layoutY="47.0" prefHeight="325.0" prefWidth="600.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
